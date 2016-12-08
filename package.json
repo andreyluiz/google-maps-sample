@@ -1,0 +1,12 @@
+{
+  "name": "google-maps-sample",
+  "version": "0.1.0",
+  "description": "Node.js + Express sample application integrated with Google Maps",
+  "main": "index.js",
+  "repository": {
+    "url": "git@github.com:andreyluiz/google-maps-sample.git",
+    "type": "git"
+  },
+  "author": "Andrey Luiz <andreyluiz.developer@gmail.com>",
+  "license": "MIT"
+}

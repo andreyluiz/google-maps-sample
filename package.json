@@ -7,6 +7,12 @@
     "url": "git@github.com:andreyluiz/google-maps-sample.git",
     "type": "git"
   },
+  "scripts": {
+    "start": "node index.js"
+  },
   "author": "Andrey Luiz <andreyluiz.developer@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }

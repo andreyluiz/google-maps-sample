@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Marker</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    #map {
+      height: 100%;
+    }
+    </style>
+</head>
+<body>
+  <h1>Marker</h1>
+  <div id="map"></div>
+  <script>
+    function initMap() {
+      var position = {lat: -33.8688, lng: 151.2195};
+
+      // Our good'n old map
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: position,
+        zoom: 13
+      });
+
+      // Place a Marker right where the map is centered
+      var marker = new google.maps.Marker({
+        position: latLng,
+        map: map,
+        title: 'Hello!'
+      });
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDFjg1eHc7vI-MVJx2Y2kAxIXlE_MxQRU&callback=initMap" async defer></script>
+</body>
+</html>

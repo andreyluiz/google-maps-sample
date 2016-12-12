@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Route between two points</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    #map {
+      height: 100%;
+    }
+    </style>
+</head>
+<body>
+  <h1>Route between two points</h1>
+  <div id="map"></div>
+  <script>
+    function initMap() {
+
+      // Our good'n old map
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: -33.8688, lng: 151.2195 },
+        zoom: 13
+      });
+
+      // Instatiates the DirectionsService. This is the object that calls the api for route information
+      var direction = new google.maps.DirectionsService();
+
+      // A new instance of Directions Renderer. This is what will render the route in our map
+      var renderer = new google.maps.DirectionsRenderer()
+
+      // First: call Directions Service route method to get info on how to go from origin to destination
+      direction.route({
+        origin: 'sidney, au',
+        destination: 'camberra, au',
+        travelMode: google.maps.TravelMode.DRIVING
+      }, function (result) {
+
+        // Second: Use DirectionsRenderer to render the info we got in the map
+        renderer.setDirections(result);
+        renderer.setMap(map); // Don't forget to set the map
+      });
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDFjg1eHc7vI-MVJx2Y2kAxIXlE_MxQRU&callback=initMap" async defer></script>
+</body>
+</html>
